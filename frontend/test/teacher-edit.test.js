@@ -4,6 +4,13 @@ process.env.NODE_ENV = "test";
 fixture`Testing Teacher UI`
     .page`http://localhost:4401/`
 test('Testing edit teachers', async t => {
+
+    await t.navigateTo("/addTeacher");
+    await t.typeText("#teacher-id", "123456");
+    await t.typeText("#teacher-name", "Mohan Perera");
+    await t.typeText("#teacher-age", "45");
+    await t.click("#teacher-add");
+
     await t.navigateTo("/");
     await t.click("#teacher-edit-123456");
 
