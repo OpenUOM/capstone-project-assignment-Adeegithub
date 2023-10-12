@@ -5,7 +5,7 @@ fixture`Testing Teacher UI`
     .page`http://localhost:4401/`
 test('Testing edit teachers', async t => {
     await t.navigateTo("/");
-    await t.click("#teacher-edit-10003");
+    await t.click("#teacher-edit-123456");
 
     await t.typeText("#teacher-name", "Changed Teacher Name");
     await t.typeText("#teacher-age", "99");
@@ -20,5 +20,5 @@ test('Testing edit teachers', async t => {
     console.log("******* Added Teacher *******" + tdText)
     await t.expect(tdText).contains("Changed Teacher Name");
 
-    await t.click("#teacher-delete-10003");
+    await t.click("#teacher-delete-123456");
 });
