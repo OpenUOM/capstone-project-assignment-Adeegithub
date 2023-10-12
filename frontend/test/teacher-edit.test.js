@@ -9,7 +9,7 @@ test('Testing edit teachers', async t => {
     await t.typeText("#teacher-id", "999999");
     await t.typeText("#teacher-name", "Pasindu Basnayaka");
     await t.typeText("#teacher-age", "45");
-    await t.typeText("#teacher-dob", "1997-11-30");
+    await t.typeText("#teacher-DOB", "1997-11-30");
     await t.click("#teacher-add");
 
     await t.navigateTo("/teacher");
