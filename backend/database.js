@@ -65,10 +65,10 @@ const addTeacher = async (id, name, age) => { //PASSED
 }
 
 const updateTeacher = async (name, age, id) => { //PASSED
-    const sql = `UPDATE teacher SET name = '${name}', age = ${age} WHERE id = ${id}`
+    const sql = `UPDATE teacher SET name = ? , age = ? WHERE id = ?`
     return new Promise((resolve, reject) => {
         knex_db
-            .raw(sql)
+            .raw(sql, [name, age, id])
             .then((data) => {
                 resolve(data);
             })
