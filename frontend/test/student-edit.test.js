@@ -14,9 +14,7 @@ test('Testing edit students', async t => {
 
     await t.navigateTo("/student");
     await t.click("#student-edit-999999");
-
-    let tdCheck1 = await t.typeText("#student-name", "Changed Student Name");
-    console.log("**************Check 1: " + JSON.stringify(tdCheck1));
+    await t.typeText("#student-name", "Changed Student Name");
     await t.typeText("#student-age", "99");
     await t.typeText("#student-Hometown", "Hometown");
     await t.click("#student-edit");
