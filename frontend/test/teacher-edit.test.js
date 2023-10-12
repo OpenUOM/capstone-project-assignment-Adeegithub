@@ -25,7 +25,7 @@ test('Testing edit teachers', async t => {
 
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
     console.log("******* Added Teacher *******" + tdText)
-    await t.expect(tdText).contains("Name\tStaff ID\tDOB\t\t");
+    await t.expect(tdText).contains("Changed Teacher Name", {timeout: 10000});
 
     await t.click("#teacher-delete-123456");
 });
