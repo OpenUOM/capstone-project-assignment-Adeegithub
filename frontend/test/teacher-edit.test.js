@@ -16,9 +16,10 @@ test('Testing edit teachers', async t => {
     const table = Selector('#teacher-table')
     const rowCount = await table.find('tr').count;
 
-    await t.wait(1000);
-
     let tdText = await table.find('tr').nth(rowCount - 1).innerText;
+
+    await t.expect(tdText).contains("Changed", { timeout: 5000 });
+    
     await t.expect(tdText).contains("Changed");
 
     await t.click("#teacher-delete-10003");
